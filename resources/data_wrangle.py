@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # this part may need to be changed to address directory issues
-df = pd.read_csv("adult.csv")
+df = pd.read_csv("resources/adult.csv")
 
 # focus data on United States
 df = df[df["native-country"] != "United-States"]
@@ -26,8 +26,10 @@ final["income"] = np.where(final["income"] == "<=50K", 0, 1)
 # split into input and output
 input = final.drop(['income'], axis=1)
 output = final['income']
+final = pd.concat([input, output], axis='columns')
 
 # export data
+pd.DataFrame(final).to_csv("composite.csv", index=False)
 pd.DataFrame(input).to_csv("input_ref.csv", index=False)
 pd.DataFrame(output).to_csv("output_ref.csv", index=False)
 pd.DataFrame(input).to_csv("input.csv", index=False, header=False)
