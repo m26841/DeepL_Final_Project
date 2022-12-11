@@ -29,8 +29,8 @@ output = final['income']
 final = pd.concat([input, output], axis='columns')
 
 # export data
-pd.DataFrame(final).to_csv("composite.csv", index=False)
-pd.DataFrame(input).to_csv("input_ref.csv", index=False)
-pd.DataFrame(output).to_csv("output_ref.csv", index=False)
-pd.DataFrame(input).to_csv("input.csv", index=False, header=False)
-pd.DataFrame(output).to_csv("output.csv", index=False, header=False)
+pd.DataFrame(final).to_csv("resources/composite.csv", index=False)
+pd.DataFrame(input).to_csv("resources/input_ref.csv", index=False)
+pd.DataFrame(output).to_csv("resources/output_ref.csv", index=False)
+pd.DataFrame(input).to_csv("resources/input.csv", index=False, header=False)
+pd.DataFrame(output).to_csv("resources/output.csv", index=False, header=False)
