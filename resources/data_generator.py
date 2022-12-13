@@ -23,7 +23,7 @@ def generate_age_data():
         for age in range(20, 66, 5):
             data = [age] + constant
             total_data.append(data)
-    pd.DataFrame(total_data).to_csv("experiment/age.csv", index=False)
+    pd.DataFrame(total_data).to_csv("experiment/age.csv", index=False, header=False)
 
 def generate_workclass_data():
     total_data = []
@@ -42,7 +42,7 @@ def generate_workclass_data():
             onehot[i] = 1
             data = constantA + onehot + constantB
             total_data.append(data)
-    pd.DataFrame(total_data).to_csv("experiment/workclass.csv", index=False)
+    pd.DataFrame(total_data).to_csv("experiment/workclass.csv", index=False, header=False)
 
 def generate_education_data():
     total_data = []
@@ -61,7 +61,7 @@ def generate_education_data():
             onehot[i] = 1
             data = constantA + onehot + constantB
             total_data.append(data)
-    pd.DataFrame(total_data).to_csv("experiment/education.csv", index=False)
+    pd.DataFrame(total_data).to_csv("experiment/education.csv", index=False, header=False)
 
 def generate_marital_data():
     total_data = []
@@ -81,7 +81,7 @@ def generate_marital_data():
             onehot[i] = 1
             data = constantA + onehot + constantB
             total_data.append(data)
-    pd.DataFrame(total_data).to_csv("experiment/marital.csv", index=False)
+    pd.DataFrame(total_data).to_csv("experiment/marital.csv", index=False, header=False)
 
 def generate_job_data():
     total_data = []
@@ -100,7 +100,7 @@ def generate_job_data():
             onehot[i] = 1
             data = constantA + onehot + constantB
             total_data.append(data)
-    pd.DataFrame(total_data).to_csv("experiment/job.csv", index=False)
+    pd.DataFrame(total_data).to_csv("experiment/job.csv", index=False, header=False)
 
 def generate_relationship_data():
     total_data = []
@@ -119,7 +119,7 @@ def generate_relationship_data():
             onehot[i] = 1
             data = constantA + onehot + constantB
             total_data.append(data)
-    pd.DataFrame(total_data).to_csv("experiment/relationship.csv", index=False)
+    pd.DataFrame(total_data).to_csv("experiment/relationship.csv", index=False, header=False)
 
 def generate_race_data():
     total_data = []
@@ -138,7 +138,7 @@ def generate_race_data():
             onehot[i] = 1
             data = constantA + onehot + constantB
             total_data.append(data)
-    pd.DataFrame(total_data).to_csv("experiment/race.csv", index=False)
+    pd.DataFrame(total_data).to_csv("experiment/race.csv", index=False, header=False)
 
 def generate_gender_data():
     total_data = []
@@ -156,7 +156,7 @@ def generate_gender_data():
             onehot[i] = 1
             data = constant + onehot
             total_data.append(data)
-    pd.DataFrame(total_data).to_csv("experiment/gender.csv", index=False)
+    pd.DataFrame(total_data).to_csv("experiment/gender.csv", index=False, header=False)
 
 generate_age_data()
 generate_workclass_data()

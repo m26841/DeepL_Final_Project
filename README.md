@@ -27,7 +27,7 @@ We evaluated our results using the keras evaluate function to retrieve the accur
 
 ## Results
 
-Our initial model had an 84% train accuracy
+Our initial model had an 84% test accuracy
 
 ## File Descriptions
 - multilayer_perceptron_network_ver2.ipynb: The Jupyter notebook which contains the code used to calculate the model based on the data
