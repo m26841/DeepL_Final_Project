@@ -14,9 +14,16 @@ There has been extensive work done on US census income data, ranging from analyz
 
 In recent years, advanced computational techniques, like machine learning and deep learning, have been applied to census data to create predictive models for urban gentrification using PCA and random forest (Reades et al. 2018), predicting adult obesity (Maharana et al. 2018), and determining healthcase utilization using a decision tree with socioeconomic features (Chen et al. 2020). At the same time, the importance of using unbiased data has also become a concern. With predictions from these models motivating larger scale changes, it has also become a priority to ensure collection and input data is as equitable and fair as possible. 
 ## Methodology
-To do this analysis, we used data from the US 1994 census bureau. The data contains 14 different attributes/demograhics for each individual, including age, education, race, occupation and relationship. The data also contains a column specifying total income, whether it is above or below 50K a year. This dataset was initially classified by Ronny Kohavi and Barry Becker at UCI
+To do this analysis, we used data from the US 1994 census bureau. The data contains 14 different attributes/demograhics for each individual, including age, education, race, occupation and relationship. The data also contains a column specifying total income, whether it is above or below 50K a year. This dataset was initially classified by Ronny Kohavi and Barry Becker at UCI.
+
+To develop our initial model, first transformed the output (income level) into one-hot encoding. Then we decided to use a sequential neural network using the keras library. This model took in all 14 attributes and returned a 1 or 0 depending on whether or not it predicted the income to be above or below 50K respectively. Our network had two RELU layers and one sigmoid layer.
+To understand the impacts of different attributes on the model, we then ran several experiments to check the accuracy of the model with the different input parameters.
 
 ## Experiments/evaluations
+We evaluated our results using the keras evaluate function to retrieve the accuracy of the model on a test set. 
+
 
 
 ## Results
+
+Our initial model had an 84% accuracy
