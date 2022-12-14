@@ -1,6 +1,8 @@
 import random as r
 import pandas as pd
 
+NUM_GROUPS = 500
+
 def random_age_gen():
     return [r.randint(18, 65)]
 
@@ -11,7 +13,7 @@ def random_nominal(size):
 
 def generate_age_data():
     total_data = []
-    for i in range(50):
+    for i in range(NUM_GROUPS):
         constant = [0, 0, 40, 0] + \
                    random_nominal(7) + \
                    random_nominal(16) + \
@@ -27,7 +29,7 @@ def generate_age_data():
 
 def generate_workclass_data():
     total_data = []
-    for i in range(50):
+    for i in range(NUM_GROUPS):
         constantA = random_age_gen() + \
                     [0, 0, 40, 0]
 
@@ -46,7 +48,7 @@ def generate_workclass_data():
 
 def generate_education_data():
     total_data = []
-    for i in range(50):
+    for i in range(NUM_GROUPS):
         constantA = random_age_gen() + \
                     [0, 0, 40, 0] + \
                     random_nominal(7)
@@ -65,7 +67,7 @@ def generate_education_data():
 
 def generate_marital_data():
     total_data = []
-    for i in range(50):
+    for i in range(NUM_GROUPS):
         constantA = random_age_gen() + \
                     [0, 0, 40, 0] + \
                     random_nominal(7) + \
@@ -85,7 +87,7 @@ def generate_marital_data():
 
 def generate_job_data():
     total_data = []
-    for i in range(50):
+    for i in range(NUM_GROUPS):
         constantA = random_age_gen() + \
                     [0, 0, 40, 0] + \
                     random_nominal(7) + \
@@ -104,7 +106,7 @@ def generate_job_data():
 
 def generate_relationship_data():
     total_data = []
-    for i in range(50):
+    for i in range(NUM_GROUPS):
         constantA = random_age_gen() + \
                     [0, 0, 40, 0] + \
                     random_nominal(7) + \
@@ -123,7 +125,7 @@ def generate_relationship_data():
 
 def generate_race_data():
     total_data = []
-    for i in range(50):
+    for i in range(NUM_GROUPS):
         constantA = random_age_gen() + \
                     [0, 0, 40, 0] + \
                     random_nominal(7) + \
@@ -142,7 +144,7 @@ def generate_race_data():
 
 def generate_gender_data():
     total_data = []
-    for i in range(50):
+    for i in range(NUM_GROUPS):
         constant = random_age_gen() + \
                    [0, 0, 40, 0] + \
                     random_nominal(7) + \
