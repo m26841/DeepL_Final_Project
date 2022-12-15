@@ -14,58 +14,63 @@ There has been extensive work done on US census income data, ranging from analyz
 
 In recent years, advanced computational techniques, like machine learning and deep learning, have been applied to census data to create predictive models for urban gentrification using PCA and random forest (Reades et al. 2018), predicting adult obesity (Maharana et al. 2018), and determining healthcase utilization using a decision tree with socioeconomic features (Chen et al. 2020). At the same time, the importance of using unbiased data has also become a concern. With predictions from these models motivating larger scale changes, it has also become a priority to ensure collection and input data is as equitable and fair as possible.
 
-To do this analysis, we used data from the US 1994 census bureau. The data contains 14 different attributes/demograhics for each individual, including age, education, race, occupation and relationship. The data also contains a column specifying total income, whether it is above or below 50K a year. This dataset was initially classified by Ronny Kohavi and Barry Becker at UCI.
+To do this analysis, we used data from the US 1994 census bureau. The data contains 14 different attributes/demograhics for each individual, including age, education, race, occupation and relationship. The data also contains a column specifying total income, whether it is above or below 50K a year (~$98,174 in 2022). This dataset was initially classified by Ronny Kohavi and Barry Becker at UCI.
 
 
 ## Methodology
 
-To develop our initial model, first transformed the output (income level) into one-hot encoding. Then we decided to use a sequential neural network using the keras library. This model took in all 14 attributes and returned a 1 or 0 depending on whether or not it predicted the income to be above or below 50K respectively. Our network had two RELU layers and one sigmoid layer.
+To develop our initial model, first transformed the output (income level) into one-hot encoding. Then we decided to use a sequential neural network using the keras library. This model took in all 14 attributes, which were also transformed into one-hot encoding, and returned a 1 or 0 depending on whether or not it predicted the income to be above or below 50K respectively. Our network had two RELU layers and one sigmoid layer.
 
-To understand the impacts of different attributes on the model, we then ran several experiments to understand the impact of different attributes on the model's predictions of income. We first identified a threshold number that represented our model predicting an individual would have over 50K of income. This threshold was used in our model's predictions to determine whether or not our model would classify that individual as earning more or less than 50K. 
+To understand the impacts of different attributes on the model, we then ran several experiments to understand the impact of different attributes on the model's predictions of income. We first identified a threshold number that represented our model predicting an individual would have over 50K of income, where anyone who reached that threshold would be predicted to earn >=50k. This threshold was used in our model's predictions to determine whether or not our model would classify that individual as earning more or less than 50K.
 
 ## Experiments/evaluations
-We evaluated the results of our initial model using the keras evaluate function to retrieve the accuracy of the model on a test set. This was done by training the model on 70% of the data, then testing the accuracy on the remaining 30% of the data.
+We evaluated the results of our model using the keras evaluate function to retrieve the accuracy of the model on a test set. This was done by training the model on 70% of the data, then testing the accuracy on the remaining 30% of the data.
 
-For the experiments, we analyzed each attribute seperately. Specifically, we created datasets with randomized values, then checked the number of people listed as having an income of over 50K with the attribute set to constant. For example, for gender, we randomized all attributes like race, age, and education, then counted the number of individuals the model predicted as having an income over 50K when they were considered male, vs when they were considered female. To ensure we did not include outliers in our final charts, we ran these experiments several times and found the average of these runs.
-
-
-
+For the experiments, we analyzed each attribute seperately. Specifically, we created datasets with randomized values, then checked the number of people listed as having an income of over 50K with the attribute set to constant. For example, for gender, we randomized all other attributes like race, age, and education, then counted the number of individuals the model predicted as having an income over 50K when they were considered male, vs when they were considered female. To ensure we did not include outliers in our final charts, we ran these experiments several times and found the average of these runs.
 
 ## Results
 
-Our initial model had an 84% test accuracy.
+Our model had a 83.9% test accuracy.
 
 The trends we noticed in our data for each attribute are as follows:
 
 * Age
-    * The impact of age appeared to be similar to a bell-curve, where people between the ages 45 and 55 were the most likely to earn above 50K and individuals younger or older than were less likely to earn above 50K. Those at age 65 (the oldest age in the dataset) were predicted to earn over 50K as often as those at around age 35. Individuals aged 20 years old were predicted to be the least likely to earn above 50K
-    
+    * The impact of age appeared to be similar to a bell-curve, where people between the ages 45 and 55 were the most likely to earn above 50K and individuals younger or older than were less likely to earn above 50K. Those at age 65 (the oldest age in the dataset) were predicted to earn over 50K as often as those at between age 35 and 40. Individuals aged 20 years old were predicted to be the least likely to earn above 50K
+    * Overall, the older one is, the more likely they are to earn a higher income, although the liklihood starts to drop after age 50
+
 * Education
-    * There was a positive correlation between amount of education and income. The two largest jumps were between those with a 9th grade education and those with a high school degree and above, and those with a Doctorate's degree. We note that there may be some bias due to there being less information in the original dataset about those with an education lower than 5th grade.
-    
+    * There was a positive correlation between amount of education and income. The two largest jumps were between those with a 9th grade education and those with a high school degree and above, and those with a Doctorate's degree, which has a significantly higher liklihood than the rest. We note that there may be some bias due to there being less information in the original dataset about those with an education lower than 5th grade.
+    * Overall, the higher degree of education one has, the more likely they are to earn a higher income
+
 * Gender
     * On average, men were more likely to be predicted to earn more than women, even with randomized characteristics
-    
+
 * Occupation
-    * In general, a specialty profession had the highest likelihood of being predicted to earn over 50K while a private house servant had the lowest likelihood. We believe this data may have suffered from a similar bias to the age data, where there were many fewer private house servants than occupations like sales, which may have impacted these results.
+    * In general, Armed Forces, Professional Specialty and Tech Support had the highest liklihoods of earning >=50k, while a private house servant had the lowest likelihood at 0. We believe this data may have suffered from a similar bias to the age data, where there were many fewer private house servants than occupations like sales, which may have impacted these results.
+    * Overall, people with technical/professional jobs are most likely they are to earn a higher income, especially those in Armed Forces, tech, or specialize
 
 * Martial Status
-    * The model predicted that married civilian spouses were the most likely to earn over 50K, followed closely by married spouses in the armed forces. Those who lived seperately, or had never been married were the least inclined to be predicted to earn above 50K. We believe this may be a result of a joint income being shared.
+    * The model predicted that married civilian spouses were the most likely to earn over 50K, followed by married spouses in the armed forces. Those who lived seperately were the least inclined to be predicted to earn above 50K. We believe this may be a result of a joint income being shared.
+    * Overall, spouces are most likely they are to earn a higher income
 
 * Race
-    * [TODO]
+    * Generally, white people were the most likely to earn over 50k, followed closely by Asian/Pacific Islanders. Black people were noticably less likely in comparison, while Amer-Indian-Eskimo had an almost 0 liklihood.
+    * Overall, white people and Asian/Pacific Islanders are most likely they are to earn a higher income, while black people are notably less likely
 
 * Relationship
-    * [TODO]
-    
-* Work class 
-    * In our model, those who worked in the government, specifically federal and local, were the mostly likely to be predicted to earn above 50K, while those without pay were the least likely to earn above 50K. We were interested in this, espicially considering changes in the economy since 1994, and were wondering what the distribution might look like with more recent data. 
+    * Based on the predictions, wives were most likely to earn over 50k, which is surprising considering the model also predicted that men were more likely than women to earn over 50k. Husbands followed, then those who are not living with family.
 
-It is noted that our results are limited by the data in the dataset and is missing nuanced aspects of the attributes that could also impact income. 
+* Work class
+    * In our model, those who worked in the federal government were the mostly likely to be predicted to earn above 50K, while those without pay were the least likely to earn above 50K. We were interested in this, espicially considering changes in the economy since 1994, and were wondering what the distribution might look like with more recent data.
+
+It is noted that our results are limited by the data in the dataset and is missing nuanced aspects of the attributes that could also impact income.
 
 ## File Descriptions
-- multilayer_perceptron_network_ver2.ipynb: The Jupyter notebook which contains the code used to calculate the model based on the data
-- multilayer_perceptron_network.ipynb: Older version of the Jupyter notebook which contains the code used to calculate the model based on the data, had some bugs that needed to be addressed which was done in ver2
+- multilayer_perceptron_network.ipynb: First version of the Jupyter notebook which contains the code used to calculate the model based on the data, had some bugs that needed to be addressed which was done in ver2
+- multilayer_perceptron_network_ver2.ipynb: Modification of the first version which addresses the issues
+- multilayer_perceptron_network_ver3.ipynb: Added code to visualize predictions of a single randomized dataset
+- multilayer_perceptron_network_ver4.ipynb: Added code to visualize predictions of multiple randomized datasets in a single instance + averages
+
 - resources
     - data_wrangle.py: Converts the raw data to a usable format for the network (i.e. converting nominal data to one-hot encoding) and outputs to a new csv
     - data_generator.py: Generates randomized sets of data to use in experimentation
@@ -77,7 +82,11 @@ It is noted that our results are limited by the data in the dataset and is missi
     - composite.csv: Combined input.csv and output.csv dataset, used for the model
 - experiment
     - This folder contains randomly-generated csvs of data that are used in the experimentation section
-    
+- single_plot
+    - This folder contains sample plots of predictions for a randomly generated set of data
+- multi_plots
+    - This folder contains sample plots of predictions for a single run of the multiple randonly generated datasets and their averages
+
 ##  Final presentation slides
-https://docs.google.com/presentation/d/1GX_dxucB4nZbqpHZgTtSb2tWV4XQmrBGtARi_a1Vtrc/edit?usp=sharing 
+https://docs.google.com/presentation/d/1GX_dxucB4nZbqpHZgTtSb2tWV4XQmrBGtARi_a1Vtrc/edit?usp=sharing
 
