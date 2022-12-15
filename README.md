@@ -14,8 +14,9 @@ There has been extensive work done on US census income data, ranging from analyz
 
 In recent years, advanced computational techniques, like machine learning and deep learning, have been applied to census data to create predictive models for urban gentrification using PCA and random forest (Reades et al. 2018), predicting adult obesity (Maharana et al. 2018), and determining healthcase utilization using a decision tree with socioeconomic features (Chen et al. 2020). At the same time, the importance of using unbiased data has also become a concern. With predictions from these models motivating larger scale changes, it has also become a priority to ensure collection and input data is as equitable and fair as possible.
 
-To do this analysis, we used data from the US 1994 census bureau. The data contains 14 different attributes/demograhics for each individual, including age, education, race, occupation and relationship. The data also contains a column specifying total income, whether it is above or below 50K a year (~$98,174 in 2022). This dataset was initially classified by Ronny Kohavi and Barry Becker at UCI.
+## Dataset
 
+To do this analysis, we used data from the US 1994 census bureau. The data contains 14 different attributes/demograhics for each individual, including age, education, race, occupation and relationship. The data also contains a column specifying total income, whether it is above or below 50K a year (~$98,174 in 2022). This dataset was initially classified by Ronny Kohavi and Barry Becker at UCI.
 
 ## Methodology
 
@@ -64,6 +65,84 @@ The trends we noticed in our data for each attribute are as follows:
     * In our model, those who worked in the federal government were the mostly likely to be predicted to earn above 50K, while those without pay were the least likely to earn above 50K. We were interested in this, espicially considering changes in the economy since 1994, and were wondering what the distribution might look like with more recent data.
 
 It is noted that our results are limited by the data in the dataset and is missing nuanced aspects of the attributes that could also impact income.
+
+
+## Examples
+
+* Age
+   * Single dataset 
+   
+   ![image](https://user-images.githubusercontent.com/49597852/207785297-cc05a8ad-fb75-4786-9c6e-9ab52b276965.png)
+   
+   * Average of 10 datasets
+   
+   ![image](https://user-images.githubusercontent.com/49597852/207785335-619760f4-3ce2-4ae9-ad4b-0debc4d50efa.png)
+   
+* Education
+   * Single dataset
+   ![image](https://user-images.githubusercontent.com/49597852/207786898-e2282d4b-190e-4b98-ace7-6fdd4857c083.png)
+   
+   * Average of 10 datasets
+   
+   ![image](https://user-images.githubusercontent.com/49597852/207786669-1650abc5-3417-4dd4-8a55-fe797368db01.png)
+
+
+* Gender
+   * Single dataset
+   
+   ![image](https://user-images.githubusercontent.com/49597852/207786850-b656beae-6ec4-4921-89c7-b10355b6ae54.png)
+
+
+   * Average of 10 datasets
+   
+   ![image](https://user-images.githubusercontent.com/49597852/207786638-a7712210-09a6-44ab-9459-9055863c24d2.png)
+
+
+* Employment
+   * Single dataset
+   ![image](https://user-images.githubusercontent.com/49597852/207786811-509d82a9-e87d-43e4-8901-06f2a7aa50cb.png)
+
+   * Average of 10 datasets
+   
+   ![image](https://user-images.githubusercontent.com/49597852/207786610-d538ab89-6e7f-405d-9081-4bffd6c6fd85.png)
+
+
+* Martial Status
+   * Average of 10 datasets
+   
+   ![image](https://user-images.githubusercontent.com/49597852/207786559-c50ea8e1-b6d7-4f3a-8376-a6cdcfe9172a.png)
+
+
+* Race
+   * Single dataset
+   ![image](https://user-images.githubusercontent.com/49597852/207786787-50db6228-9cc6-4b2a-b3e1-cb8cc6bf9f0d.png)
+
+   * Average of 10 datasets
+   
+   ![image](https://user-images.githubusercontent.com/49597852/207786502-4ecfba82-ace0-4cfe-bfc8-41d8c461724d.png)
+
+
+* Relationship
+   * Single dataset
+   ![image](https://user-images.githubusercontent.com/49597852/207786735-a4dadab6-0a13-4f73-8310-7aa828edf0a0.png)
+
+
+   * Average of 10 datasets
+   
+   ![image](https://user-images.githubusercontent.com/49597852/207786467-dc6584d7-6c2c-4596-9f52-c8fbb535fea8.png)
+
+
+* Work class 
+   * ingle dataset
+   
+   ![image](https://user-images.githubusercontent.com/49597852/207786720-d2771834-9edd-4331-9c43-49a805180efd.png)
+
+   * Average of 10 datasets
+   
+   ![image](https://user-images.githubusercontent.com/49597852/207786443-efdfe3e2-4e69-49a8-9b69-1ab5d3d3046b.png)
+
+
+
 
 ## File Descriptions
 - multilayer_perceptron_network.ipynb: First version of the Jupyter notebook which contains the code used to calculate the model based on the data, had some bugs that needed to be addressed which was done in ver2
