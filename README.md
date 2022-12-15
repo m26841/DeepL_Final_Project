@@ -80,6 +80,7 @@ It is noted that our results are limited by the data in the dataset and is missi
    
 * Education
    * Single dataset
+   * 
    ![image](https://user-images.githubusercontent.com/49597852/207786898-e2282d4b-190e-4b98-ace7-6fdd4857c083.png)
    
    * Average of 10 datasets
@@ -100,7 +101,8 @@ It is noted that our results are limited by the data in the dataset and is missi
 
 * Employment
    * Single dataset
-   ![image](https://user-images.githubusercontent.com/49597852/207786811-509d82a9-e87d-43e4-8901-06f2a7aa50cb.png)
+   
+   ![image](https://user-images.githubusercontent.com/49597852/207787675-eab3572f-9681-4102-902f-20e158f3cbb9.png)
 
    * Average of 10 datasets
    
@@ -108,6 +110,10 @@ It is noted that our results are limited by the data in the dataset and is missi
 
 
 * Martial Status
+   * Single dataset
+   
+   ![image](https://user-images.githubusercontent.com/49597852/207787703-cd9f6320-5591-496d-a7ce-3d66be936e95.png)
+
    * Average of 10 datasets
    
    ![image](https://user-images.githubusercontent.com/49597852/207786559-c50ea8e1-b6d7-4f3a-8376-a6cdcfe9172a.png)
@@ -115,6 +121,7 @@ It is noted that our results are limited by the data in the dataset and is missi
 
 * Race
    * Single dataset
+   
    ![image](https://user-images.githubusercontent.com/49597852/207786787-50db6228-9cc6-4b2a-b3e1-cb8cc6bf9f0d.png)
 
    * Average of 10 datasets
@@ -124,6 +131,7 @@ It is noted that our results are limited by the data in the dataset and is missi
 
 * Relationship
    * Single dataset
+   
    ![image](https://user-images.githubusercontent.com/49597852/207786735-a4dadab6-0a13-4f73-8310-7aa828edf0a0.png)
 
 
@@ -133,7 +141,7 @@ It is noted that our results are limited by the data in the dataset and is missi
 
 
 * Work class 
-   * ingle dataset
+   * Single dataset
    
    ![image](https://user-images.githubusercontent.com/49597852/207786720-d2771834-9edd-4331-9c43-49a805180efd.png)
 
