@@ -36,33 +36,33 @@ Our model had a 83.9% test accuracy.
 The trends we noticed in our data for each attribute are as follows:
 
 * Age
-    * The impact of age appeared to be similar to a bell-curve, where people between the ages 45 and 55 were the most likely to earn above 50K and individuals younger or older than were less likely to earn above 50K. Those at age 65 (the oldest age in the dataset) were predicted to earn over 50K as often as those at between age 35 and 40. Individuals aged 20 years old were predicted to be the least likely to earn above 50K
-    * Overall, the older one is, the more likely they are to earn a higher income, although the liklihood starts to drop after age 50
+    * The impact of age has a direct relation with income, in that the older one is, the likelier they are to earn >= 50k. Those at age 65 (typical retirement age) were predicted to earn the most. Individuals aged 20 years old (the youngest tested age) were predicted to be the least likely to earn above 50K
+    * Overall, the older one is, the more likely they are to earn a higher income
 
 * Education
     * There was a positive correlation between amount of education and income. The two largest jumps were between those with a 9th grade education and those with a high school degree and above, and those with a Doctorate's degree, which has a significantly higher liklihood than the rest. We note that there may be some bias due to there being less information in the original dataset about those with an education lower than 5th grade.
     * Overall, the higher degree of education one has, the more likely they are to earn a higher income
 
 * Gender
-    * On average, men were more likely to be predicted to earn more than women, even with randomized characteristics
+    * On average, men were more likely to be predicted to earn more than women, even with randomized characteristics, which makes apparent the gender inequality on income
 
 * Occupation
     * In general, Armed Forces, Professional Specialty and Tech Support had the highest liklihoods of earning >=50k, while a private house servant had the lowest likelihood at 0. We believe this data may have suffered from a similar bias to the age data, where there were many fewer private house servants than occupations like sales, which may have impacted these results.
     * Overall, people with technical/professional jobs are most likely they are to earn a higher income, especially those in Armed Forces, tech, or specialize
 
 * Martial Status
-    * The model predicted that married civilian spouses were the most likely to earn over 50K, followed by married spouses in the armed forces. Those who lived seperately were the least inclined to be predicted to earn above 50K. We believe this may be a result of a joint income being shared.
+    * The model predicted that married civilian and armed forces spouses were the most likely to earn over 50K. Widows were the least inclined to be predicted to earn above 50K.
     * Overall, spouces are most likely they are to earn a higher income
 
 * Race
-    * Generally, white people were the most likely to earn over 50k, followed closely by Asian/Pacific Islanders. Black people were noticably less likely in comparison, while Amer-Indian-Eskimo had an almost 0 liklihood.
-    * Overall, white people and Asian/Pacific Islanders are most likely they are to earn a higher income, while black people are notably less likely
+    * Generally, white people were the most likely to earn over 50k, followed by Asian/Pacific Islanders. Black people were noticably less likely in comparison, while Amer-Indian-Eskimo had an almost 0 liklihood.
+    * Overall, white people and Asian/Pacific Islanders are most likely they are to earn a higher income, while black people are notably less likely, which makes apparent the racial inequality on income
 
 * Relationship
-    * Based on the predictions, wives were most likely to earn over 50k, which is surprising considering the model also predicted that men were more likely than women to earn over 50k. Husbands followed, then those who are not living with family.
+    * Based on the predictions, wives were most likely to earn over 50k, which is surprising considering the model also predicted that men were more likely than women to earn over 50k. Husbands and who are not living with family follow.
 
 * Work class
-    * In our model, those who worked in the federal government were the mostly likely to be predicted to earn above 50K, while those without pay were the least likely to earn above 50K. We were interested in this, espicially considering changes in the economy since 1994, and were wondering what the distribution might look like with more recent data.
+    * In our model, those who worked in the local government and private businesses were the mostly likely to be predicted to earn above 50K, while those without pay and in state government were the least likely to earn above 50K. We were interested in this, espicially considering changes in the economy since 1994, and were wondering what the distribution might look like with more recent data.
 
 It is noted that our results are limited by the data in the dataset and is missing nuanced aspects of the attributes that could also impact income.
 
@@ -70,83 +70,83 @@ It is noted that our results are limited by the data in the dataset and is missi
 ## Examples
 
 * Age
-   * Single dataset 
-   
+   * Single dataset
+
    ![image](https://user-images.githubusercontent.com/49597852/207785297-cc05a8ad-fb75-4786-9c6e-9ab52b276965.png)
-   
+
    * Average of 10 datasets
-   
+
    ![image](https://user-images.githubusercontent.com/49597852/207785335-619760f4-3ce2-4ae9-ad4b-0debc4d50efa.png)
-   
+
 * Education
    * Single dataset
-   * 
+   *
    ![image](https://user-images.githubusercontent.com/49597852/207786898-e2282d4b-190e-4b98-ace7-6fdd4857c083.png)
-   
+
    * Average of 10 datasets
-   
+
    ![image](https://user-images.githubusercontent.com/49597852/207786669-1650abc5-3417-4dd4-8a55-fe797368db01.png)
 
 
 * Gender
    * Single dataset
-   
+
    ![image](https://user-images.githubusercontent.com/49597852/207786850-b656beae-6ec4-4921-89c7-b10355b6ae54.png)
 
 
    * Average of 10 datasets
-   
+
    ![image](https://user-images.githubusercontent.com/49597852/207786638-a7712210-09a6-44ab-9459-9055863c24d2.png)
 
 
 * Employment
    * Single dataset
-   
+
    ![image](https://user-images.githubusercontent.com/49597852/207787675-eab3572f-9681-4102-902f-20e158f3cbb9.png)
 
    * Average of 10 datasets
-   
+
    ![image](https://user-images.githubusercontent.com/49597852/207786610-d538ab89-6e7f-405d-9081-4bffd6c6fd85.png)
 
 
 * Martial Status
    * Single dataset
-   
+
    ![image](https://user-images.githubusercontent.com/49597852/207787703-cd9f6320-5591-496d-a7ce-3d66be936e95.png)
 
    * Average of 10 datasets
-   
+
    ![image](https://user-images.githubusercontent.com/49597852/207786559-c50ea8e1-b6d7-4f3a-8376-a6cdcfe9172a.png)
 
 
 * Race
    * Single dataset
-   
+
    ![image](https://user-images.githubusercontent.com/49597852/207786787-50db6228-9cc6-4b2a-b3e1-cb8cc6bf9f0d.png)
 
    * Average of 10 datasets
-   
+
    ![image](https://user-images.githubusercontent.com/49597852/207786502-4ecfba82-ace0-4cfe-bfc8-41d8c461724d.png)
 
 
 * Relationship
    * Single dataset
-   
+
    ![image](https://user-images.githubusercontent.com/49597852/207786735-a4dadab6-0a13-4f73-8310-7aa828edf0a0.png)
 
 
    * Average of 10 datasets
-   
+
    ![image](https://user-images.githubusercontent.com/49597852/207786467-dc6584d7-6c2c-4596-9f52-c8fbb535fea8.png)
 
 
-* Work class 
+* Work class
    * Single dataset
-   
+
    ![image](https://user-images.githubusercontent.com/49597852/207786720-d2771834-9edd-4331-9c43-49a805180efd.png)
 
    * Average of 10 datasets
-   
+
    ![image](https://user-images.githubusercontent.com/49597852/207786443-efdfe3e2-4e69-49a8-9b69-1ab5d3d3046b.png)
 
 
@@ -177,3 +177,5 @@ It is noted that our results are limited by the data in the dataset and is missi
 ##  Final presentation slides
 https://docs.google.com/presentation/d/1GX_dxucB4nZbqpHZgTtSb2tWV4XQmrBGtARi_a1Vtrc/edit?usp=sharing
 
+##  Website
+https://among04.wixsite.com/deep-learning-final
