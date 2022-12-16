@@ -36,7 +36,7 @@ Our model had a 83.9% test accuracy.
 The trends we noticed in our data for each attribute are as follows:
 
 * Age
-    * The impact of age has a direct relation with income, in that the older one is, the likelier they are to earn >= 50k. Those at age 65 (typical retirement age) were predicted to earn the most. Individuals aged 20 years old (the youngest tested age) were predicted to be the least likely to earn above 50K
+    * The impact of age has a direct relation with income, in that the older one is, the likelier they are to earn >= 50k, although the rate of increase slows . Those at age 65 (typical retirement age) were predicted to earn the most. Individuals aged 20 years old (the youngest tested age) were predicted to be the least likely to earn above 50K
     * Overall, the older one is, the more likely they are to earn a higher income
 
 * Education
@@ -179,3 +179,6 @@ https://docs.google.com/presentation/d/1GX_dxucB4nZbqpHZgTtSb2tWV4XQmrBGtARi_a1V
 
 ##  Website
 https://among04.wixsite.com/deep-learning-final
+
+##  Presentation
+https://youtu.be/UMq5k2Dif_Q
